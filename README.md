@@ -10,11 +10,13 @@ You'll need go installed on your machine.
 To apply a filter on a folder of images:
 
 
+### Using Go Waitgroup
+
 Blur filter: ```go run main.go -src imgs/ -dst output -filter blur -task waitgroup```
 
 Grayscale filter: ```go run main.go -src imgs/ -dst output -filter grayscale -task waitgroup```
 
-
+### Using Go Channel
 
 Blur filter: ```go run main.go -src imgs/ -dst output -filter blur -task channel -poolsize 2```
 
