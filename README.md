@@ -22,6 +22,17 @@ Blur filter: ```go run main.go -src imgs/ -dst output -filter blur -task channel
 
 Grayscale filter: ```go run main.go -src imgs/ -dst output -filter grayscale -task channel -poolsize 2```
 
+## Small Benchmark
+
+```go test -bench=.```
+
+|Name   | Time (ns)  | Time (s)  |
+|---|---|---|
+|BenchmarkGrayscaleWaitgroup  | 5148467159 ns/op | 5.148 s/op  |
+|BenchmarkGrayscaleChannelPoolSize1   | 15156505624 ns/op  | 15.156 s/op  |
+|BenchmarkGrayscaleChannelPoolSize2   | 9191897129 ns/op  | 9.191 s/op  |
+|BenchmarkGrayscaleChannelPoolSize4   | 6083960564 ns/op  | 6.083 s/op  |
+|BenchmarkGrayscaleChannelPoolSize8   | 6245621457 ns/op  | 6.245 s/op  |
 
 
 ## Result
